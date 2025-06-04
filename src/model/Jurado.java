@@ -1,13 +1,13 @@
 package model;
 
-public class jurado {
+public class Jurado {
     private int id_jurado;
     private int nMiembros;
 
-    public jurado() {
+    public Jurado() {
     }
 
-    public jurado(int id_jurado, int nMiembros) {
+    public Jurado(int id_jurado, int nMiembros) {
         this.id_jurado = id_jurado;
         this.nMiembros = nMiembros;
     }

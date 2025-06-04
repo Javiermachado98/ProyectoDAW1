@@ -1,15 +1,15 @@
 package model;
 
-public class participa {
+public class Participa {
     private int id_participa;
     private String idEstudiante;
     private String anio;
     private String rol;
 
-    public participa() {
+    public Participa() {
     }
 
-    public participa(int id_participa, String idEstudiante, String anio, String rol) {
+    public Participa(int id_participa, String idEstudiante, String anio, String rol) {
         this.id_participa = id_participa;
         this.idEstudiante = idEstudiante;
         this.anio = anio;

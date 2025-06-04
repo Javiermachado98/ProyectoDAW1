@@ -3,14 +3,13 @@ package dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import model.participa;
-import model.proyecto;
+import model.Participa;
 
 public class ParticipaDAO {
 
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("miUnidadDePersistencia");
 
-    public void guardarParticipa(participa participa) {
+    public void guardarParticipa(Participa participa) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(participa);

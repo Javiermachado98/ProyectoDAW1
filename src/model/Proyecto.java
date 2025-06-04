@@ -1,6 +1,6 @@
 package model;
 
-public class proyecto {
+public class Proyecto {
     private int id_proyecto;
     private String titulo;
     private String descripcion;
@@ -10,10 +10,10 @@ public class proyecto {
     private String comentario;
     private String id_jurado;
 
-    public proyecto() {
+    public Proyecto() {
     }
 
-    public proyecto(int id_proyecto, String titulo, String descripcion, String fechPresentacion, String tecnologia, String puntuacion, String comentario, String id_jurado) {
+    public Proyecto(int id_proyecto, String titulo, String descripcion, String fechPresentacion, String tecnologia, String puntuacion, String comentario, String id_jurado) {
         this.id_proyecto = id_proyecto;
         this.titulo = titulo;
         this.descripcion = descripcion;

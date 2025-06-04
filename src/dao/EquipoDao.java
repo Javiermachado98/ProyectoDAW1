@@ -1,5 +1,5 @@
 package dao;
-import model.equipo;
+import model.Equipo;
 
 
 import jakarta.persistence.EntityManager;
@@ -13,11 +13,11 @@ public class EquipoDao {
         this.entityManager = entityManager;
     }
 
-    public List<equipo> getAllEquipos() {
-        return entityManager.createQuery("SELECT e FROM Equipo e", equipo.class).getResultList();
+    public List<Equipo> getAllEquipos() {
+        return entityManager.createQuery("SELECT e FROM Equipo e", Equipo.class).getResultList();
     }
 
-    public void createEquipo(equipo eq) {
+    public void createEquipo(Equipo eq) {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();

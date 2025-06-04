@@ -1,6 +1,6 @@
 package model;
 
-public class estudiante {
+public class Estudiante {
     private int id_estudiante;
     private String dni;
     private String nombre;
@@ -8,9 +8,9 @@ public class estudiante {
     private String apellido2;
     private String correo;
 
-    public estudiante(){}
+    public Estudiante(){}
 
-    public estudiante(int id_estudiante, String dni, String nombre, String apellido1, String apellido2, String correo) {
+    public Estudiante(int id_estudiante, String dni, String nombre, String apellido1, String apellido2, String correo) {
         this.id_estudiante = id_estudiante;
         this.dni = dni;
         this.nombre = nombre;

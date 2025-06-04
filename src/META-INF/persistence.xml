@@ -9,11 +9,11 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
     <!-- Clases de entidad -->
-    <class>model.proyecto</class>
-    <class>model.equipo</class>
-    <class>model.estudiante</class>
-    <class>model.jurado</class>
-    <class>model.participa</class>
+    <class>model.Proyecto</class>
+    <class>model.Equipo</class>
+    <class>model.Estudiante</class>
+    <class>model.Jurado</class>
+    <class>model.Participa</class>
 
     <!-- Propiedades de conexión -->
     <properties>

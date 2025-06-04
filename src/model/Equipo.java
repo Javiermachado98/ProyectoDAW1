@@ -1,15 +1,15 @@
 package model;
 
-public class equipo {
+public class Equipo {
     private int id_equipo;
     private String nombreEq;
     private String ies;
     private String modalidad;
 
-    public equipo() {
+    public Equipo() {
     }
 
-    public equipo(int id_equipo, String nombreEq, String ies, String modalidad) {
+    public Equipo(int id_equipo, String nombreEq, String ies, String modalidad) {
         this.id_equipo = id_equipo;
         this.nombreEq = nombreEq;
         this.ies = ies;
