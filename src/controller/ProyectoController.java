@@ -1,35 +1,66 @@
 package controller;
 
 import dao.ProyectoDAO;
+import model.Proyecto;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
-
 
 public class ProyectoController {
 
     private final ProyectoDAO dao = new ProyectoDAO();
 
-    public void anadirProyecto(){
+    public void anadirProyecto() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Ingrese el titulo del proyecto: ");
-        String titulo = sc.nextLine();
+        try {
+            System.out.println("=== Alta de Proyecto ===");
 
-        System.out.println("Ingrese descripcion del proyecto: ");
-        String descripcion = sc.nextLine();
+            System.out.print("Título: ");
+            String titulo = sc.nextLine();
 
-        System.out.println("Ingrese la fecha de presentacion: ");
+            System.out.print("Descripción: ");
+            String descripcion = sc.nextLine();
 
-        System.out.println("Precio: ");
-        double precio = sc.nextDouble();
+            System.out.print("Fecha de presentación (yyyy-MM-dd): ");
+            //String fechaTexto = sc.nextLine();
+            //LocalDate fechaPresentacion = LocalDate.parse(fechaTexto, DateTimeFormatter.ISO_LOCAL_DATE);
 
+            System.out.print("Tecnologias ");
+            String tecnologia = sc.nextLine();
 
-        //Viaje myviaje = new Viaje(destino, agencia, duracion, precio);
-        //dao.guardar(myviaje);
-        //System.out.println("Viaje insertado en BBDD");
+            System.out.print("Puntuación: ");
+            String puntuacion = sc.nextLine();
 
+            System.out.print("Comentario: ");
+            String comentario = sc.nextLine();
+
+            System.out.print("ID del jurado: ");
+            int idJurado = sc.nextInt();
+
+            System.out.print("Código del equipo: ");
+            int codigoEquipo = sc.nextInt();
+
+            // Crear el proyecto (sin ID, ya que se genera automáticamente)
+            Proyecto proyecto = new Proyecto();
+            proyecto.setTitulo(titulo);
+            proyecto.setDescripcion(descripcion);
+            //proyecto.setFechPresentacion(fechaPresentacion);
+            proyecto.setTecnologia(tecnologia);
+            proyecto.setPuntuacion(puntuacion);
+            proyecto.setComentario(comentario);
+            proyecto.setId_jurado(idJurado);
+            proyecto.setCodigoEquipo(codigoEquipo);
+
+            dao.createProyecto(proyecto);
+
+            System.out.println("Se ha agregado tu proyecto a la base de datos.");
+        } catch (Exception e) {
+            System.err.println("No se ha podido agregar tu proyecto a la base de datos: " + e.getMessage());
+        } finally {
+            sc.close();
+            dao.close();
+        }
     }
 }
