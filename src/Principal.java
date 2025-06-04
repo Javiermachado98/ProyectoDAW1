@@ -22,7 +22,7 @@ public class Principal {
 
 
     /**
-     * M�todo que muestra el men� del programa.
+     * Metodo que muestra el menu del programa.
      */
     public static void mostrarMenu() {
         System.out.println("==============================================");
@@ -43,7 +43,7 @@ public class Principal {
         System.out.println("   13.-  Evaluacion proyecto");
         System.out.println("   14.-  Estadisticas");
         System.out.println("==============================================");
-        System.out.print("  Introduce una opci�n: ");
+        System.out.print("  Introduce una opcion: ");
     }
 
     public static void main(String[] args) {
@@ -51,10 +51,10 @@ public class Principal {
         int opcion;
 
         do {
-            // Mostrar el men�
+            // Mostrar el menu
             mostrarMenu();
 
-            // Obtener la opci�n seleccionada por el usuario
+            // Obtener la opcion seleccionada por el usuario
             sc = new Scanner(System.in);
             opcion = sc.nextInt();
 
