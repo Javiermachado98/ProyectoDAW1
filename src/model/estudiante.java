@@ -10,12 +10,21 @@ public class estudiante {
 
     public estudiante(){}
 
-    public estudiante(String dni, String correo, String apellido2, String apellido1, String nombre) {
+    public estudiante(int id_estudiante, String dni, String nombre, String apellido1, String apellido2, String correo) {
+        this.id_estudiante = id_estudiante;
         this.dni = dni;
-        this.correo = correo;
-        this.apellido2 = apellido2;
-        this.apellido1 = apellido1;
         this.nombre = nombre;
+        this.apellido1 = apellido1;
+        this.apellido2 = apellido2;
+        this.correo = correo;
+    }
+
+    public int getId_estudiante() {
+        return id_estudiante;
+    }
+
+    public void setId_estudiante(int id_estudiante) {
+        this.id_estudiante = id_estudiante;
     }
 
     public String getDni() {
@@ -26,20 +35,12 @@ public class estudiante {
         this.dni = dni;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getApellido1() {
@@ -50,18 +51,27 @@ public class estudiante {
         this.apellido1 = apellido1;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getApellido2() {
+        return apellido2;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     @Override
     public String toString() {
         return "estudiante{" +
-                "dni='" + dni + '\'' +
+                "id_estudiante=" + id_estudiante +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido1='" + apellido1 + '\'' +
                 ", apellido2='" + apellido2 + '\'' +

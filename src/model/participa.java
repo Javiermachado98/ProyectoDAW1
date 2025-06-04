@@ -9,10 +9,19 @@ public class participa {
     public participa() {
     }
 
-    public participa(String idEstudiante, String anio, String rol) {
+    public participa(int id_participa, String idEstudiante, String anio, String rol) {
+        this.id_participa = id_participa;
         this.idEstudiante = idEstudiante;
         this.anio = anio;
         this.rol = rol;
+    }
+
+    public int getId_participa() {
+        return id_participa;
+    }
+
+    public void setId_participa(int id_participa) {
+        this.id_participa = id_participa;
     }
 
     public String getIdEstudiante() {
@@ -42,7 +51,8 @@ public class participa {
     @Override
     public String toString() {
         return "participa{" +
-                "idEstudiante='" + idEstudiante + '\'' +
+                "id_participa=" + id_participa +
+                ", idEstudiante='" + idEstudiante + '\'' +
                 ", anio='" + anio + '\'' +
                 ", rol='" + rol + '\'' +
                 '}';

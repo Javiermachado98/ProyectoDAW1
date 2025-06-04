@@ -9,7 +9,8 @@ public class equipo {
     public equipo() {
     }
 
-    public equipo(String nombreEq, String ies, String modalidad) {
+    public equipo(int id_equipo, String nombreEq, String ies, String modalidad) {
+        this.id_equipo = id_equipo;
         this.nombreEq = nombreEq;
         this.ies = ies;
         this.modalidad = modalidad;
@@ -39,10 +40,19 @@ public class equipo {
         this.ies = ies;
     }
 
+    public int getId_equipo() {
+        return id_equipo;
+    }
+
+    public void setId_equipo(int id_equipo) {
+        this.id_equipo = id_equipo;
+    }
+
     @Override
     public String toString() {
         return "equipo{" +
-                "nombreEq='" + nombreEq + '\'' +
+                "id_equipo=" + id_equipo +
+                ", nombreEq='" + nombreEq + '\'' +
                 ", ies='" + ies + '\'' +
                 ", modalidad='" + modalidad + '\'' +
                 '}';
