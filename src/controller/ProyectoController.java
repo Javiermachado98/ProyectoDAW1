@@ -4,6 +4,7 @@ import dao.ProyectoDAO;
 import model.Proyecto;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProyectoController {
@@ -54,4 +55,13 @@ public class ProyectoController {
             dao.close();
         }
     }
+
+    public ProyectoController(){
+
+    }
+     public void VerProyectos(){
+         ArrayList<Proyecto>  proyecto = dao.getAllProyecto();
+
+     }
+
 }
