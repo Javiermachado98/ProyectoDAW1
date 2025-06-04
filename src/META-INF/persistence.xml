@@ -10,6 +10,10 @@
 
     <!-- Clases de entidad -->
     <class>model.proyecto</class>
+    <class>model.equipo</class>
+    <class>model.estudiante</class>
+    <class>model.jurado</class>
+    <class>model.participa</class>
 
     <!-- Propiedades de conexión -->
     <properties>
