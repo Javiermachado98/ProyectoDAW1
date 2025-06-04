@@ -1,19 +1,40 @@
 package model;
 
-public class Proyecto {
+import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "proyecto")
+public class Proyecto implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_proyecto;
+    @Column(name = "titulo")
     private String titulo;
+    @Column(name = "descripcion")
     private String descripcion;
-    private String fechPresentacion;
+    @Column(name = "fechaPresentacion")
+    private LocalDate fechPresentacion;
+    @Column(name = "tecnologias")
     private String tecnologia;
+    @Column(name = "puntuacion")
     private String puntuacion;
+    @Column(name = "comentario")
     private String comentario;
-    private String id_jurado;
+    @Column(name = "idJurados")
+    private int id_jurado;
+    @Column(name = "idJurados")
+    private int codigoEquipo;
 
     public Proyecto() {
     }
 
-    public Proyecto(int id_proyecto, String titulo, String descripcion, String fechPresentacion, String tecnologia, String puntuacion, String comentario, String id_jurado) {
+    public Proyecto(int id_proyecto, String titulo, String descripcion, LocalDate fechPresentacion, String tecnologia, String puntuacion, String comentario, int id_jurado, int codigoEquipo) {
         this.id_proyecto = id_proyecto;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -22,6 +43,7 @@ public class Proyecto {
         this.puntuacion = puntuacion;
         this.comentario = comentario;
         this.id_jurado = id_jurado;
+        this.codigoEquipo = codigoEquipo;
     }
 
     public int getId_proyecto() {
@@ -48,11 +70,11 @@ public class Proyecto {
         this.descripcion = descripcion;
     }
 
-    public String getFechPresentacion() {
+    public LocalDate getFechPresentacion() {
         return fechPresentacion;
     }
 
-    public void setFechPresentacion(String fechPresentacion) {
+    public void setFechPresentacion(LocalDate fechPresentacion) {
         this.fechPresentacion = fechPresentacion;
     }
 
@@ -80,25 +102,34 @@ public class Proyecto {
         this.comentario = comentario;
     }
 
-    public String getId_jurado() {
+    public int getId_jurado() {
         return id_jurado;
     }
 
-    public void setId_jurado(String id_jurado) {
+    public void setId_jurado(int id_jurado) {
         this.id_jurado = id_jurado;
+    }
+
+    public int getCodigoEquipo() {
+        return codigoEquipo;
+    }
+
+    public void setCodigoEquipo(int codigoEquipo) {
+        this.codigoEquipo = codigoEquipo;
     }
 
     @Override
     public String toString() {
-        return "proyecto{" +
+        return "Proyecto{" +
                 "id_proyecto=" + id_proyecto +
                 ", titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", fechPresentacion='" + fechPresentacion + '\'' +
+                ", fechPresentacion=" + fechPresentacion +
                 ", tecnologia='" + tecnologia + '\'' +
                 ", puntuacion='" + puntuacion + '\'' +
                 ", comentario='" + comentario + '\'' +
-                ", id_jurado='" + id_jurado + '\'' +
+                ", id_jurado=" + id_jurado +
+                ", codigoEquipo=" + codigoEquipo +
                 '}';
     }
 }
