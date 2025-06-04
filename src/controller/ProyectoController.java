@@ -2,7 +2,6 @@ package controller;
 
 import dao.ProyectoDAO;
 import model.Proyecto;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -24,8 +23,8 @@ public class ProyectoController {
             String descripcion = sc.nextLine();
 
             System.out.print("Fecha de presentación (yyyy-MM-dd): ");
-            //String fechaTexto = sc.nextLine();
-            //LocalDate fechaPresentacion = LocalDate.parse(fechaTexto, DateTimeFormatter.ISO_LOCAL_DATE);
+            String fechaTexto = sc.nextLine();
+            LocalDate fechaPresentacion = LocalDate.parse(fechaTexto, DateTimeFormatter.ISO_LOCAL_DATE);
 
             System.out.print("Tecnologias ");
             String tecnologia = sc.nextLine();
@@ -42,18 +41,10 @@ public class ProyectoController {
             System.out.print("Código del equipo: ");
             int codigoEquipo = sc.nextInt();
 
-            // Crear el proyecto (sin ID, ya que se genera automáticamente)
-            Proyecto proyecto = new Proyecto();
-            proyecto.setTitulo(titulo);
-            proyecto.setDescripcion(descripcion);
-            //proyecto.setFechPresentacion(fechaPresentacion);
-            proyecto.setTecnologia(tecnologia);
-            proyecto.setPuntuacion(puntuacion);
-            proyecto.setComentario(comentario);
-            proyecto.setId_jurado(idJurado);
-            proyecto.setCodigoEquipo(codigoEquipo);
+            // Crear el proyecto (sin ID, ya que este lo puse como PK autoincrement)
+            Proyecto myproyecto = new Proyecto(titulo, descripcion, fechaPresentacion, tecnologia, puntuacion, comentario, idJurado, codigoEquipo);
 
-            dao.createProyecto(proyecto);
+            dao.createProyecto(myproyecto);
 
             System.out.println("Se ha agregado tu proyecto a la base de datos.");
         } catch (Exception e) {
