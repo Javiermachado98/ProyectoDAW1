@@ -1,23 +1,23 @@
 package dao;
-import model.Equipo;
+import model.Jurado;
 
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import java.util.List;
 
-public class EquipoDao {
+public class JuradoDAO {
     private EntityManager entityManager;
 
-    public EquipoDao(EntityManager entityManager) {
+    public JuradoDAO(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
-    public List<Equipo> getAllEquipos() {
-        return entityManager.createQuery("SELECT e FROM Equipo e", Equipo.class).getResultList();
+    public List<Jurado> getAllJurados() {
+        return entityManager.createQuery("SELECT e FROM Jurado e", Jurado.class).getResultList();
     }
 
-    public void createEquipo(Equipo eq) {
+    public void createJurado(Jurado eq) {
         EntityTransaction transaction = entityManager.getTransaction();
         try {
             transaction.begin();
