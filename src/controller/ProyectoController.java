@@ -3,6 +3,10 @@ package controller;
 import dao.ProyectoDAO;
 
 import java.util.Scanner;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
 
 public class ProyectoController {
 

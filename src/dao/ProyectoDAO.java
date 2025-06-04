@@ -4,17 +4,17 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import model.Equipo;
 import model.Proyecto;
 
 import java.util.List;
 
 public class ProyectoDAO {
 
+    private EntityManagerFactory emfProyecto = Persistence.createEntityManagerFactory("miUnidadDePersistencia");
     private EntityManager entityManager;
 
-    public ProyectoDAO(EntityManager entityManager) {
-        this.entityManager = entityManager;
+    public ProyectoDAO() {
+        this.entityManager = emfProyecto.createEntityManager();
     }
 
     public List<Proyecto> getAllProyecto() {
@@ -35,4 +35,12 @@ public class ProyectoDAO {
         }
     }
 
+    public void close() {
+        if (entityManager != null && entityManager.isOpen()) {
+            entityManager.close();
+        }
+        if (emfProyecto != null && emfProyecto.isOpen()) {
+            emfProyecto.close();
+        }
+    }
 }
